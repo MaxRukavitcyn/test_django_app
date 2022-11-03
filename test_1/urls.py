@@ -1,3 +1,8 @@
+from django.urls import path
+from django.views.generic import TemplateView
+
+from test_1.views import *
+
 """test_django_app URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,12 +18,14 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from test_1.views import index
+
+
+class About(TemplateView):
+    template_name = 'about.html'
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', index),
-    path('test_1/', include('test_1.urls'))
+    path('get_message/', get_message),
+    path('about/', About.as_view())
 ]
