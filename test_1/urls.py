@@ -26,6 +26,6 @@ class About(TemplateView):
 
 urlpatterns = [
     path('', index),
-    path('get_message/', get_message),
-    path('about/', About.as_view())
+    path('test_1/get_message/', get_message),
+    path('test_1/about/', About.as_view())
 ]
