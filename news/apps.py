@@ -1,6 +1,7 @@
 from django.apps import AppConfig
 
 
-class Test1Config(AppConfig):
+class NewsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'test_1'
+    name = 'news'
+    verbose_name = 'Новости'

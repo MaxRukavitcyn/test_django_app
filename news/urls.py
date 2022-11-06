@@ -1,7 +1,7 @@
 from django.urls import path
 from django.views.generic import TemplateView
 
-from test_1.views import *
+from news.views import *
 
 """test_django_app URL Configuration
 
@@ -26,6 +26,7 @@ class About(TemplateView):
 
 urlpatterns = [
     path('', index),
-    path('test_1/get_message/', get_message),
-    path('test_1/about/', About.as_view())
+    path('news/get_message/', get_message),
+    path('news/about/', About.as_view()),
+    path('news/add/', add_news)
 ]

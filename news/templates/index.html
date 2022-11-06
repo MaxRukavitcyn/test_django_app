@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hello World from index html</h1>
+<ul>
+    <li><a href="/news/about/">About</a></li>
+    <li><a href="/news/get_message/">get_message</a></li>
+<!--    <li><button onclick="addNews()">add news</button></li>-->
+</ul>
+
+<script>
+    function addNews() {
+        fetch('/news/add').then(r => console.log(r))
+    }
+</script>
+
+<h1> {{ title }}</h1>
+
+{% for n in news %}
+<div>
+    <div>{{ n.title }}</div>
+    <div>{{ n.content }}</div>
+    <div>{{ n.date_pub }}</div>
+    <div style="width: 30%">
+        <hr>
+    </div>
+
+</div>
+{% endfor %}
+
+</body>
+</html>
